@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\BubbleSort;
+namespace Tests\SelectionSort;
 
 use PHPUnit\Framework\TestCase;
-use App\BubbleSort\Program;
 use Tests\Traits\SortAlgorithmsDataProvider;
+use App\SelectionSort\Program;
 
 class ProgramTest extends TestCase
 {
