@@ -4,9 +4,12 @@ namespace Tests\BubbleSort;
 
 use PHPUnit\Framework\TestCase;
 use App\BubbleSort\Program;
+use Tests\Traits\SortAlgorithmsDataProvider;
 
 class ProgramTest extends TestCase
 {
+	use SortAlgorithmsDataProvider;
+
 	/**
 	 * @test
 	 *
@@ -22,23 +25,5 @@ class ProgramTest extends TestCase
 
 		//Assert
 		$this->assertEquals($expected, $actual);
-	}
-
-	public function unsortItemsProvider()
-	{
-		return [
-			[
-				[4, 5, 1, 3, 2],
-				[1, 2, 3, 4, 5]
-			],
-			[
-				[0],
-				[0]
-			],
-			[
-				[1, 2, 3],
-				[1, 2, 3]
-			],
-		];
 	}
 }
