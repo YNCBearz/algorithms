@@ -4,25 +4,25 @@ namespace App\SelectionSort;
 
 class Program
 {
-	public function sort(array $unsortItems): array
+	public function sort(array $unsortedItems): array
 	{
-		$itemCount = count($unsortItems);
+		$itemCount = count($unsortedItems);
 
 		for ($i = 0; $i < $itemCount - 1; $i++) {
-			$minInfo = $this->findMin($unsortItems, $i);
+			$minInfo = $this->findMin($unsortedItems, $i);
 
-			$unsortItems = $this->swap($unsortItems, $i, $minInfo);
+			$unsortedItems = $this->swap($unsortedItems, $i, $minInfo);
 		}
 
-		return $unsortItems;
+		return $unsortedItems;
 	}
 
-	private function findMin(array $unsortItems, int $currentIndex): array
+	private function findMin(array $unsortedItems, int $currentIndex): array
 	{
-		$sliceItems = array_slice($unsortItems, $currentIndex);
+		$sliceItems = array_slice($unsortedItems, $currentIndex);
 
 		$min = min($sliceItems);
-		$minKey = array_keys($unsortItems, min($sliceItems))[0];
+		$minKey = array_keys($unsortedItems, min($sliceItems))[0];
 
 		return [
 			'value' => $min,

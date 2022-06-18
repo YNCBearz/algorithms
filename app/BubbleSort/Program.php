@@ -4,31 +4,31 @@ namespace App\BubbleSort;
 
 class Program
 {
-	public function sort(array $unsortItems): array
+	public function sort(array $unsortedItems): array
 	{
 		$firstIndex = 0;
-		$lastIndex = count($unsortItems) - 1;
+		$lastIndex = count($unsortedItems) - 1;
 
 		for ($j = $lastIndex; $j > $firstIndex; $j--) {
 			for ($i = $lastIndex; $i > $firstIndex; $i--) {
-				if ($unsortItems[$i] < $unsortItems[$i - 1]) {
-					$unsortItems = $this->swap($unsortItems, $i, $i - 1);
+				if ($unsortedItems[$i] < $unsortedItems[$i - 1]) {
+					$unsortedItems = $this->swap($unsortedItems, $i, $i - 1);
 				}
 			}
 		}
 
-		$result = $unsortItems;
+		$result = $unsortedItems;
 		return $result;
 	}
 
-	private function swap(array $unsortItems, int $i, int $j): array
+	private function swap(array $unsortedItems, int $i, int $j): array
 	{
-		$itemA = $unsortItems[$i];
-		$itemB = $unsortItems[$j];
+		$itemA = $unsortedItems[$i];
+		$itemB = $unsortedItems[$j];
 
-		$unsortItems[$j] = $itemA;
-		$unsortItems[$i] = $itemB;
+		$unsortedItems[$j] = $itemA;
+		$unsortedItems[$i] = $itemB;
 
-		return $unsortItems;
+		return $unsortedItems;
 	}
 }

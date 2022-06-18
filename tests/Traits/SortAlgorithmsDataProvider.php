@@ -4,7 +4,7 @@ namespace Tests\Traits;
 
 trait SortAlgorithmsDataProvider
 {
-	public function unsortItemsProvider()
+	public function unsortedItemsProvider()
 	{
 		return [
 			[

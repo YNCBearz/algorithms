@@ -15,15 +15,15 @@ class ProgramTest extends TestCase
 	/**
 	 * @test
 	 *
-	 * @dataProvider unsortItemsProvider
+	 * @dataProvider unsortedItemsProvider
 	 */
-	public function GivenUnsortItems_WhenCall_ThenSort(array $unsortItems, array $expected)
+	public function GivenUnsortedItems_WhenCall_ThenSort(array $unsortedItems, array $expected)
 	{
 		//Arrange
 		$this->sut = new Program();
 
 		//Act
-		$actual = $this->sut->sort($unsortItems);
+		$actual = $this->sut->sort($unsortedItems);
 
 		//Assert
 		$this->assertEquals($expected, $actual);
