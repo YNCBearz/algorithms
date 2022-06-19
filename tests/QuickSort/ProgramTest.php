@@ -47,4 +47,23 @@ class ProgramTest extends TestCase
         //Assert
         $this->assertEquals($expected, $actual);
     }
+
+    /**
+     * @test
+     */
+    public function GivenThreeItem_WhenCall_ThenReturn()
+    {
+        //Arrange
+        $this->sut = new Program();
+
+        $unsortedItems = [2, 1, 3];
+
+        $expected = [1, 2, 3];
+
+        //Act
+        $actual = $this->sut->sort($unsortedItems);
+
+        //Assert
+        $this->assertEquals($expected, $actual);
+    }
 }
