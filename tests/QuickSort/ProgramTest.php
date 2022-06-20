@@ -17,48 +17,10 @@ class ProgramTest extends TestCase
      *
      * @dataProvider unsortedItemsProvider
      */
-//    public function GivenUnsortedItems_WhenCall_ThenSort(array $unsortedItems, array $expected)
-//    {
-//        //Arrange
-//        $this->sut = new Program();
-//
-//        //Act
-//        $actual = $this->sut->sort($unsortedItems);
-//
-//        //Assert
-//        $this->assertEquals($expected, $actual);
-//    }
-
-    /**
-     * @test
-     */
-    public function GivenOneItem_WhenCall_ThenReturn()
+    public function GivenUnsortedItems_WhenCall_ThenSort(array $unsortedItems, array $expected)
     {
         //Arrange
         $this->sut = new Program();
-
-        $unsortedItems = [1];
-
-        $expected = [1];
-
-        //Act
-        $actual = $this->sut->sort($unsortedItems);
-
-        //Assert
-        $this->assertEquals($expected, $actual);
-    }
-
-    /**
-     * @test
-     */
-    public function GivenThreeItem_WhenCall_ThenReturn()
-    {
-        //Arrange
-        $this->sut = new Program();
-
-        $unsortedItems = [2, 1, 3];
-
-        $expected = [1, 2, 3];
 
         //Act
         $actual = $this->sut->sort($unsortedItems);

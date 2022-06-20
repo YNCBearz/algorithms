@@ -12,28 +12,16 @@ class Program
 
         $pivot = array_shift($unsortedSortItems);
 
-        $rightItems = [];
-        $leftItems = [];
+        $left = [];
+        $right = [];
         foreach ($unsortedSortItems as $unsortedSortItem) {
-            if ($unsortedSortItem >= $pivot) {
-                $rightItems[] = $unsortedSortItem;
+            if ($unsortedSortItem <= $pivot) {
+                $left[] = $unsortedSortItem;
             } else {
-                $leftItems[] = $unsortedSortItem;
+                $right[] = $unsortedSortItem;
             }
         }
 
-        $result = [];
-
-        foreach ($leftItems as $leftItem) {
-            $result[] = $leftItem;
-        }
-
-        $result[] = $pivot;
-
-        foreach ($rightItems as $rightItem) {
-            $result[] = $rightItem;
-        }
-
-        return $result;
+        return array_merge($this->sort($left), [$pivot], $this->sort($right));
     }
 }
