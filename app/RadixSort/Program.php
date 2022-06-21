@@ -15,7 +15,7 @@ class Program
         $numberOfDigits = count(str_split($max, 1));
 
         $unsortedItems = $this->convertToStringWithZero($unsortedItems, $numberOfDigits);
-        $grouped = $this->emptyGroupedArray();
+        $grouped = $this->emptyGroup();
 
         foreach ($unsortedItems as $unsortedItem) {
             $number = $unsortedItem % 10;
@@ -27,7 +27,7 @@ class Program
         }
 
         for ($digit = 2; $digit <= $numberOfDigits; $digit++) {
-            $grouped = $this->sortByDigits($grouped, $digit);
+            $grouped = $this->sortByDigitNumber($grouped, $digit);
         }
 
         return $this->flatten($grouped);
@@ -49,7 +49,7 @@ class Program
         return $result;
     }
 
-    private function emptyGroupedArray(): array
+    private function emptyGroup(): array
     {
         return [
             0 => [],
@@ -78,9 +78,9 @@ class Program
         return $result;
     }
 
-    private function sortByDigits(array $grouped, int $digit): array
+    private function sortByDigitNumber(array $grouped, int $digit): array
     {
-        $result = $this->emptyGroupedArray();
+        $result = $this->emptyGroup();
         $flatten = $this->flatten($grouped);
 
         foreach ($flatten as $item) {
