@@ -6,13 +6,9 @@ class Program
 {
     public function sort(array $unsortedItems): array
     {
-        if (count($unsortedItems) <= 1) {
-            return $unsortedItems;
-        }
-
         $max = max($unsortedItems);
 
-        $numberOfDigits = count(str_split($max, 1));
+        $numberOfDigits = strlen((string)$max);
 
         $unsortedItems = $this->convertToStringWithZero($unsortedItems, $numberOfDigits);
         $grouped = $this->emptyGroup();
